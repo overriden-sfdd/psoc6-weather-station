@@ -10,6 +10,9 @@
 # ModusToolbox library repos or information about library dependencies
 libs/
 
+# Local secrets
+secret/
+
 # Eclipse IDE for ModusToolbox files
 .metadata/
 # .cyignore

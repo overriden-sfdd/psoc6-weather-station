@@ -28,19 +28,27 @@
 # Basic Configuration
 ################################################################################
 
+# Type of ModusToolbox Makefile Options include:
+#
+# COMBINED    -- Top Level Makefile usually for single standalone application
+# APPLICATION -- Top Level Makefile usually for multi project application
+# PROJECT     -- Project Makefile under Application
+#
+MTB_TYPE=COMBINED
+
 # Target board/hardware (BSP).
-# To change the target, it is recommended to use the Library manager 
-# ('make modlibs' from command line), which will also update Eclipse IDE launch 
-# configurations. If TARGET is manually edited, ensure TARGET_<BSP>.mtb with a 
+# To change the target, it is recommended to use the Library manager
+# ('make modlibs' from command line), which will also update Eclipse IDE launch
+# configurations. If TARGET is manually edited, ensure TARGET_<BSP>.mtb with a
 # valid URL exists in the application, run 'make getlibs' to fetch BSP contents
 # and update or regenerate launch configurations for your IDE.
-TARGET=CY8CKIT-062-WIFI-BT
+TARGET=APP_CY8CKIT-062-WIFI-BT
 
 # Name of application (used to derive name of final linked file).
 # 
 # If APPNAME is edited, ensure to update or regenerate launch 
 # configurations for your IDE.
-APPNAME=mtb-example-psoc6-empty-app
+APPNAME=psoc6-weather-station
 
 # Name of toolchain to use. Options include:
 #
@@ -88,11 +96,11 @@ DISABLE_COMPONENTS=
 # tree for source code and builds it. The SOURCES variable can be used to
 # manually add source code to the build process from a location not searched
 # by default, or otherwise not found by the build system.
-SOURCES=
+SOURCES=main.c
 
 # Like SOURCES, but for include directories. Value should be paths to
 # directories (without a leading -I).
-INCLUDES=
+INCLUDES=core secret data config_files
 
 # https://github.com/Infineon/mtb-example-anycloud-wlan-lowpower/blob/master/Makefile
 MBEDTLSFLAGS = MBEDTLS_USER_CONFIG_FILE='"mbedtls_user_config.h"'
